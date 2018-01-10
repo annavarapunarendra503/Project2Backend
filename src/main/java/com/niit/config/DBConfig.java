@@ -16,7 +16,9 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import com.niit.model.BlogComment;
 import com.niit.model.BlogPost;
 import com.niit.model.BlogPostLikes;
+import com.niit.model.Job;
 import com.niit.model.Notifications;
+import com.niit.model.ProfilePicture;
 import com.niit.model.UsersDetails;
 
 public class DBConfig {
@@ -61,6 +63,9 @@ Logger logger =LoggerFactory.getLogger(DBConfig.class);
 		sessionBuilder.addAnnotatedClass(BlogComment.class);
 		sessionBuilder.addAnnotatedClass(BlogPostLikes.class);
 		sessionBuilder.addAnnotatedClass(Notifications.class);
+		sessionBuilder.addAnnotatedClass(ProfilePicture.class);
+		sessionBuilder.addAnnotatedClass(Job.class);
+		
 		System.out.println("Session");
 		
 		logger.info("========Hibernate SessionFactory Object created=========== ");

@@ -1,6 +1,7 @@
 package com.niit.controller;
 
 import java.util.Date;
+
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.niit.dao.BlogPostDao;
 import com.niit.dao.BlogPostLikesDao;
@@ -22,6 +24,8 @@ import com.niit.model.BlogPost;
 import com.niit.model.BlogPostLikes;
 import com.niit.model.UsersDetails;
 import com.niit.model.Error;
+
+@RestController
 public class BlogPostController {
 
 	@Autowired
@@ -54,7 +58,7 @@ public class BlogPostController {
 
 	
 	
-	/*
+	
 	@RequestMapping(value="/getblogs/{approved}",method=RequestMethod.GET)
 	public ResponseEntity<?> getBlogs(@PathVariable int approved,HttpSession session){
 		UsersDetails validUser = (UsersDetails) session.getAttribute("validUser");
@@ -159,6 +163,6 @@ public class BlogPostController {
 		return new ResponseEntity<BlogPost>(blogPost,HttpStatus.OK);
 		
 	}
-	*/
+	
 	
 }

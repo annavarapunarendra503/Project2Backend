@@ -23,14 +23,16 @@ public class BlogPostDaoImpl implements BlogPostDao{
 	
 	public void saveBlogPost(BlogPost blogPost) {
 		
-		 Session session=sessionFactory.openSession();
-		 Transaction tx=session.beginTransaction();
-		 session.saveOrUpdate(blogPost);
-		 tx.commit();
+		System.out.println(blogPost.getBlogTitle());
+
+		Session session = sessionFactory.openSession();
+		Transaction tx=session.beginTransaction();
+		session.save(blogPost);
+		tx.commit();
 		 
 		 return; 
 		}
-	/*
+	
    
 	@Transactional
 	public List<BlogPost> getBlogs(int approved) {
@@ -85,5 +87,11 @@ public class BlogPostDaoImpl implements BlogPostDao{
 	        session.save(blogComment);//insert into BlogComment
 		
 	}
-*/
+
+
+
+	
+
+
+	
 }
