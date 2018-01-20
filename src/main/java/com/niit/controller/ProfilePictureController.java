@@ -42,7 +42,7 @@ public class ProfilePictureController {
 		
 		
 		@GetMapping(value="/getimage/{username}")
-		public @ResponseBody byte[] getProfilePic(@PathVariable String username,HttpSession session){
+		public @ResponseBody byte[] getProfilePicture(@PathVariable String username,HttpSession session){
 			UsersDetails validUser=(UsersDetails)session.getAttribute("validUser");
 			if(validUser==null)
 				return null;

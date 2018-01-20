@@ -13,6 +13,11 @@ import org.springframework.stereotype.Component;
 @Table(name="ProfilePicture")
 public class ProfilePicture {
 
+	@Id
+    private String username;
+	@Lob
+	private byte[] image;
+	
 	public String getUsername() {
 		return username;
 	}
@@ -25,9 +30,6 @@ public class ProfilePicture {
 	public void setImage(byte[] image) {
 		this.image = image;
 	}
-	@Id
-    private String username;
-	@Lob
-	private byte[] image;
+	
 	
 }

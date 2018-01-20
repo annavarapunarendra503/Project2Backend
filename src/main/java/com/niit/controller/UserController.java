@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import com.niit.dao.UserDao;
 import com.niit.model.UsersDetails;
 import com.niit.service.UserService;
+//import com.niit.model.Error;
 
 @RestController
 public class UserController {
@@ -104,8 +105,19 @@ if(!userService.isUsernameValid(user.getUsername()))
         return new ResponseEntity<List<UsersDetails>>(users, HttpStatus.OK);
     }
   
-	
-	
+	@RequestMapping(value="/updateprofile",method=RequestMethod.PUT)
+	public ResponseEntity<?> updateUserProfile(@RequestBody UsersDetails users,HttpSession session)
+	{    
+	    UsersDetails user=(UsersDetails)session.getAttribute("user");
+	    if(user==null)
+	    {
+	        Error error=new Error("Unauthorized user");
+	        return new ResponseEntity<Error>(error,HttpStatus.UNAUTHORIZED); 
+	    }
+	    userService.updateUser(users);
+	    session.setAttribute("user", users);
+	    return new ResponseEntity<Void>(HttpStatus.OK);
+	}
 	
 }
 

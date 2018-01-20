@@ -16,6 +16,9 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import com.niit.model.BlogComment;
 import com.niit.model.BlogPost;
 import com.niit.model.BlogPostLikes;
+import com.niit.model.Chat;
+import com.niit.model.Friend;
+
 import com.niit.model.Job;
 import com.niit.model.Notifications;
 import com.niit.model.ProfilePicture;
@@ -65,7 +68,9 @@ Logger logger =LoggerFactory.getLogger(DBConfig.class);
 		sessionBuilder.addAnnotatedClass(Notifications.class);
 		sessionBuilder.addAnnotatedClass(ProfilePicture.class);
 		sessionBuilder.addAnnotatedClass(Job.class);
-		
+		sessionBuilder.addAnnotatedClass(Friend.class);
+		sessionBuilder.addAnnotatedClass(Chat.class);
+		sessionBuilder.scanPackages("com.niit");
 		System.out.println("Session");
 		
 		logger.info("========Hibernate SessionFactory Object created=========== ");
@@ -82,6 +87,7 @@ Logger logger =LoggerFactory.getLogger(DBConfig.class);
 		logger.info("========Hibernate Transaction object created=========== ");
 		return transactionManager;
 	}
+	
 	
 	
 	

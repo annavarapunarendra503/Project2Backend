@@ -115,14 +115,14 @@ public class UserDaoImpl implements UserDao {
 		return true;// valid user
 	}
 	
-	public UsersDetails updateUser(UsersDetails validUser)
+	public UsersDetails updateUser(UsersDetails users)
 	{
 		Session session=sessionFactory.openSession();
 		Transaction tx=session.beginTransaction();
-		session.update(validUser);
+		session.update(users);
 		tx.commit();
 		session.clear();
-		return validUser;
+		return users;
 	}
 	
 	
