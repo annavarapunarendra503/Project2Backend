@@ -27,6 +27,7 @@ public class FriendDaoImpl implements FriendDao{
 		Session session=sessionFac.getCurrentSession();
 		session.save(friend); //insert into friend values(fromId,toId,status)
 		
+		
 	}
 	
 	

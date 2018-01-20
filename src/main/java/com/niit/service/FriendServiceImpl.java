@@ -20,6 +20,7 @@ public class FriendServiceImpl implements FriendService{
 	public void addFriendRequest(Friend friend) {
 		friendDao.addFriendRequest(friend);
 		
+		
 	}
 
 	public List<UsersDetails> suggestedUserList(String username) {

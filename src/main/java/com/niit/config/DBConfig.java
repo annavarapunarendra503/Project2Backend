@@ -72,7 +72,8 @@ Logger logger =LoggerFactory.getLogger(DBConfig.class);
 		sessionBuilder.addAnnotatedClass(Chat.class);
 		sessionBuilder.scanPackages("com.niit");
 		System.out.println("Session");
-		
+	
+	
 		logger.info("========Hibernate SessionFactory Object created=========== ");
 		return sessionBuilder.buildSessionFactory();
 

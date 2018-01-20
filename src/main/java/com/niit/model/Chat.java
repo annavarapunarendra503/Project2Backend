@@ -2,6 +2,7 @@ package com.niit.model;
 
 public class Chat {
 
+	
 	private String message;
 	private String to;
 	private String from;

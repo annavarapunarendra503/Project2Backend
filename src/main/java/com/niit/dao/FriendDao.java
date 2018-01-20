@@ -14,4 +14,5 @@ public interface FriendDao {
 	List<UsersDetails> listofFriends(String username);
 	List<UsersDetails> listofMutualFriends(String loginId,String suggestedUsername);
 	
+	
 }

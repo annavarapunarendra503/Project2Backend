@@ -24,6 +24,7 @@ public class FriendController {
     @Autowired
 	private FriendService friendService;
 
+    
 
 @RequestMapping(value="/addfriendrequest/{toId}",method=RequestMethod.POST)
 public ResponseEntity<?> addFriendRequest(@PathVariable String toId,HttpSession session)

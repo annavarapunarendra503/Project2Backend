@@ -16,4 +16,5 @@ public interface FriendService {
 	List<UsersDetails> listofMutualFriends(String loginId,String suggestedUsername);
 	
 
+	
 }

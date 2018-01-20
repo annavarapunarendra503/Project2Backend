@@ -63,6 +63,7 @@ public class WebSocketconfiguration implements WebSocketMessageBrokerConfigurer{
 		return true;
 	}
 
+	
 
 	public void configureWebSocketTransport(WebSocketTransportRegistration arg0) {
 		// TODO Auto-generated method stub
